@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Player</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div id="titlebar">
+    <div class="window-controls-spacer">
+      <img src="icon.ico" class="app-icon" alt="icon" onerror="this.style.display='none'">
+    </div>
+    <div id="window-title">Web Player</div>
+    <div class="window-controls">
+      <button id="btn-minimize">🗕</button>
+      <button id="btn-maximize">🗖</button>
+      <button id="btn-close">✕</button>
+    </div>
+  </div>
+
+  <div id="app-container">
+    <div id="start-screen">
+      <h2>Insira a URL para começar</h2>
+      <div class="input-group">
+        <input type="text" id="initial-url" placeholder="https://exemplo.com">
+        <button id="btn-start">Carregar</button>
+      </div>
+    </div>
+
+    <div id="webviews-container"></div>
+
+    <div id="floating-bubble" class="hidden">
+      <div id="bubble-icon">
+        <img src="icon.ico" alt="Ícone"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <span style="display:none;">🌐</span>
+      </div>
+
+      <div id="bubble-menu" class="hidden">
+        <div class="split-control-container">
+          <span class="menu-header">Quantidade de Janelas</span>
+          <div class="split-controls">
+            <button id="split-minus" title="Diminuir Janelas">-</button>
+            <span id="split-counter">1 Janela</span>
+            <button id="split-plus" title="Aumentar Janelas">+</button>
+          </div>
+        </div>
+
+        <div class="menu-header">Janelas</div>
+        <ul id="games-list"></ul>
+
+        <button id="btn-add-new">+ Adicionar Novo Link</button>
+
+        <div id="add-form" class="hidden">
+          <input type="text" id="new-game-url" placeholder="https://exemplo.com">
+          <div class="add-form-buttons">
+            <button id="btn-confirm-add">Adicionar e Abrir</button>
+            <button id="btn-cancel-add">Cancelar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+
+</html>
